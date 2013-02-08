@@ -1,9 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler", "ProjectEuler\ProjectEuler.csproj", "{B4D42BE1-1DEE-4A44-9F1E-A2C080C9077E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler.Tests", "ProjectEuler.Tests\ProjectEuler.Tests.csproj", "{A7B10708-652D-497C-AD7A-FD14E5B3F541}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4A8C5C49-8579-4C62-A7D1-006BEF4EC178}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler.Tests", "ProjectEuler.Tests\ProjectEuler.Tests.csproj", "{B0E67F77-82DB-4F73-A42F-77ACBB3568C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,11 +17,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B4D42BE1-1DEE-4A44-9F1E-A2C080C9077E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D42BE1-1DEE-4A44-9F1E-A2C080C9077E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4D42BE1-1DEE-4A44-9F1E-A2C080C9077E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4D42BE1-1DEE-4A44-9F1E-A2C080C9077E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7B10708-652D-497C-AD7A-FD14E5B3F541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7B10708-652D-497C-AD7A-FD14E5B3F541}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7B10708-652D-497C-AD7A-FD14E5B3F541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E67F77-82DB-4F73-A42F-77ACBB3568C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E67F77-82DB-4F73-A42F-77ACBB3568C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E67F77-82DB-4F73-A42F-77ACBB3568C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E67F77-82DB-4F73-A42F-77ACBB3568C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

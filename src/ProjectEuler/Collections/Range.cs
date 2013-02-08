@@ -9,7 +9,7 @@ namespace ProjectEuler.Collections
     /// <summary>
     /// Represents an finite, immutable range of Int32s that may have a non-1 step and may or may not be inclusive.
     /// </summary>
-    public sealed class Range : ICollection<int>, IEnumerable<int>, IEnumerable
+    public sealed class Range : ICollection<int>
     {
         /// <summary>
         /// Initializes a new Range that starts at 0 and ends at <paramref name="length"/> exclusively.
@@ -79,7 +79,8 @@ namespace ProjectEuler.Collections
         private readonly int _step;
         private readonly bool _isExclusive;
 
-        private static readonly string EmptyRangeString = "Range {/}";
+        private const string EMPTY_RANGE_STRING = "Range {/}";
+
         /// <summary>
         /// Return a string representation of the Range.
         /// </summary>
@@ -88,14 +89,15 @@ namespace ProjectEuler.Collections
         {
             if (_finish == _start && !_isExclusive)
             {
-                return EmptyRangeString;
+                return EMPTY_RANGE_STRING;
             }
-            else if (_step > 0 ? (_finish < _start) : (_start < _finish))
+            
+            if (_step > 0 ? (_finish < _start) : (_start < _finish))
             {
-                return EmptyRangeString;
+                return EMPTY_RANGE_STRING;
             }
 
-            StringBuilder rangeBuilder = new StringBuilder();
+            var rangeBuilder = new StringBuilder();
             rangeBuilder.AppendFormat("Range [{0}, {1}", _start, _finish);
 
             if (_step != 1)
@@ -115,7 +117,7 @@ namespace ProjectEuler.Collections
         /// <returns>A parallel version of the elements of this range.</returns>
         public ParallelQuery<int> AsParallel()
         {
-            int length = Count;
+            var length = Count;
 
             if (length <= 0)
             {
@@ -127,7 +129,7 @@ namespace ProjectEuler.Collections
                 return ParallelEnumerable.Range(_start, length);
             }
 
-            ParallelQuery<int> sequence = ParallelEnumerable.Range(0, length)
+            var sequence = ParallelEnumerable.Range(0, length)
                 .Select(x => x * _step);
             if (_start != 0)
             {
@@ -174,7 +176,7 @@ namespace ProjectEuler.Collections
         /// <returns>An enumerator for the Range.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
 
         #endregion
@@ -236,23 +238,23 @@ namespace ProjectEuler.Collections
             {
                 throw new ArgumentNullException("array");
             }
-            else if (arrayIndex < 0)
+            if (arrayIndex < 0)
             {
                 throw new ArgumentOutOfRangeException("arrayIndex", arrayIndex, "Must be at least 0");
             }
-            else if (array.Length + arrayIndex < Count)
+            if (array.Length + arrayIndex < Count)
             {
                 throw new ArgumentException("Array is not large enough.", "array");
             }
 
-            int finish = _finish;
+            var finish = _finish;
             if (_step > 0)
             {
                 if (_isExclusive)
                 {
                     finish--;
                 }
-                for (int current = _start; current <= finish; current += _step)
+                for (var current = _start; current <= finish; current += _step)
                 {
                     array[arrayIndex++] = current;
                 }
@@ -263,7 +265,7 @@ namespace ProjectEuler.Collections
                 {
                     finish++;
                 }
-                for (int current = _start; current >= finish; current += _step)
+                for (var current = _start; current >= finish; current += _step)
                 {
                     array[arrayIndex++] = current;
                 }

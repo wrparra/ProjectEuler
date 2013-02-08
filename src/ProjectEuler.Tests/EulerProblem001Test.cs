@@ -1,9 +1,6 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ProjectEuler.Problems;
+using FluentAssertions;
 using Xunit;
-using ProjectEuler.Problems;
 
 namespace ProjectEuler.Tests
 {
@@ -12,19 +9,17 @@ namespace ProjectEuler.Tests
         [Fact]
         public void When_we_list_all_the_natural_numbers_below_10_that_are_multiples_of_3_or_5_the_sum_must_be_23()
         {
-            string expected = "23";
-            IEulerProblem problem = new EulerProblem001(1, 10);
-            string result = problem.Solve();            
-            Assert.Same(expected, result);
+            const int expected = 23;
+            var result = new EulerProblem001(1, 10).Solve();
+            result.Should().Be(expected);
         }
 
         [Fact]
-        public void When_we_list_all_the_natural_numbers_below_1000_that_are_multiples_of_3_or_5_the_sum_must_be_233168()
+        public void When_we_list_all_the_natural_numbers_below_999_that_are_multiples_of_3_or_5_the_sum_must_be_233168()
         {
-            string expected = "233168";
-            IEulerProblem problem = new EulerProblem001(1, 1000);
-            string result = problem.Solve();
-            Assert.Same(expected, result);
+            const int expected = 233168;
+            var result = new EulerProblem001(1, 1000).Solve();
+            result.Should().Be(expected);
         }
     }
 }
