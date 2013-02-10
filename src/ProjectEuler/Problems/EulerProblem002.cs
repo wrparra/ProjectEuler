@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using ProjectEuler.Collections;
+using ProjectEuler.Extensions;
 
 namespace ProjectEuler.Problems
 {
@@ -32,20 +34,8 @@ namespace ProjectEuler.Problems
             var result = 0;
             while (result < _limit)
             {
-                result = Fibonacci(++index);
+                result = MathExtensions.Fibonacci(++index);
                 _results.Add(result);
-            }
-        }
-
-        private void CalculateEvenNumbers()
-        {
-            var index = _start;
-            var result = 0;
-            while (result < _limit)
-            {
-                result = Fibonacci(index++);
-                if (result % 2 == 0)
-                    _results.Add(result);
             }
         }
 
@@ -54,7 +44,7 @@ namespace ProjectEuler.Problems
             //CalculateEvenNumbers();
             //return _results.Sum();
 
-            return GenerateInfinteFibonacci().Where(x => x % 2 == 0).TakeWhile(x => x < _limit).Sum();
+            return MathExtensions.FibonacciNumbers().Where(x => x % 2 == 0).TakeWhile(x => x < _limit).Sum();
         }
 
         public string Print()
@@ -62,30 +52,6 @@ namespace ProjectEuler.Problems
             Calculate();
             return string.Join(", ", _results.ToArray());
         }
-
-        /// <summary>
-        /// Generate infinite fibonacci lazy list
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerable<int> GenerateInfinteFibonacci()
-        {
-            var count = _start;
-            while (true)
-            {
-                yield return Fibonacci(count++);
-            }
-        }
-
-        /// <summary>
-        /// A sucessão de Fibonacci ou sequência de Fibonacci é uma sequência de números naturais, 
-        /// na qual os primeiros dois termos são 0 e 1, e cada termo subsequente corresponde à soma dos dois precedentes.
-        /// </summary>
-        /// <see cref="http://pt.wikipedia.org/wiki/N%C3%BAmero_de_Fibonacci"/>
-        private int Fibonacci(int n)
-        {
-            if (n == 0) return 0;
-            if (n == 1) return 1;
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
-        }
+        
     }
 }
