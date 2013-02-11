@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
-using ProjectEuler.Collections;
 using ProjectEuler.Extensions;
 
 namespace ProjectEuler.Problems
@@ -17,41 +14,16 @@ namespace ProjectEuler.Problems
     /// </summary>
     public class EulerProblem002 : IEulerProblem
     {
-        private readonly int _start;
         private readonly int _limit;
-        private readonly List<int> _results;
 
-        public EulerProblem002(int start, int limit = 4000000)
+        public EulerProblem002(int limit)
         {
-            _start = start;
             _limit = limit;
-            _results = new List<int>();
-        }
-
-        private void Calculate()
-        {
-            var index = _start;
-            var result = 0;
-            while (result < _limit)
-            {
-                result = MathExtensions.Fibonacci(++index);
-                _results.Add(result);
-            }
         }
 
         public int Solve()
         {
-            //CalculateEvenNumbers();
-            //return _results.Sum();
-
-            return MathExtensions.FibonacciNumbers().Where(x => x % 2 == 0).TakeWhile(x => x < _limit).Sum();
+            return MathExtensions.FibonacciNumbers().Where(x => x.IsEven()).TakeWhile(x => x < _limit).Sum();
         }
-
-        public string Print()
-        {
-            Calculate();
-            return string.Join(", ", _results.ToArray());
-        }
-        
     }
 }

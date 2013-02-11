@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ProjectEuler.Collections;
+﻿using System.Linq;
 using ProjectEuler.Extensions;
 
 namespace ProjectEuler.Problems

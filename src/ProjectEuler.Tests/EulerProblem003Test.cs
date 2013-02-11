@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ProjectEuler.Extensions;
 using ProjectEuler.Problems;
 using FluentAssertions;
@@ -10,7 +9,7 @@ namespace ProjectEuler.Tests
     public class EulerProblem003Test
     {
         [Fact]
-        public void the_largest_prime_factor_of_the_number_13195_must_be_29()
+        public void The_largest_prime_factor_of_the_number_13195_must_be_29()
         {
             const int expected = 29;
             var result = new EulerProblem003(13195).Solve();
@@ -18,7 +17,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void the_largest_prime_factor_of_the_number_600851475143_must_be_6857()
+        public void The_largest_prime_factor_of_the_number_600851475143_must_be_6857()
         {
             const int expected = 6857;
             var result = new EulerProblem003(600851475143).Solve();

@@ -39,8 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\Primes.cs" />
+    <Compile Include="Extensions\CollectionsExtensions.cs" />
     <Compile Include="IEulerProblem.cs" />
     <Compile Include="Extensions\MathExtensions.cs" />
+    <Compile Include="Problems\EulerProblem004.cs" />
     <Compile Include="Problems\EulerProblem002.cs" />
     <Compile Include="Problems\EulerProblem001.cs" />
     <Compile Include="Problems\EulerProblem003.cs" />

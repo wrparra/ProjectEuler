@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Linq;
+﻿using System.Linq;
 using ProjectEuler.Collections;
 
 namespace ProjectEuler.Problems

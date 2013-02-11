@@ -59,6 +59,7 @@
     <Compile Include="EulerProblem003Test.cs" />
     <Compile Include="EulerProblem002Test.cs" />
     <Compile Include="EulerProblem001Test.cs" />
+    <Compile Include="EulerProblem004Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
