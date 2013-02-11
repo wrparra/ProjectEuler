@@ -24,13 +24,33 @@ namespace ProjectEuler.Problems
 
         public int Solve()
         {
-            return (from n in _range
-                    from x in _range
-                    let p = (n * x)
-                    where p.IsPalindrome()
-                    select p)
-                    .Distinct()
-                    .Max();
+            //brute-force
+            //return (from n in _range from x in _range let p = (n * x) where p.IsPalindrome() select p).Distinct().Max();
+            
+            //optimized
+            return Palindromes().Max();
+        }
+
+        /// <summary>
+        /// Optimized way to generate Palindromic Numbers
+        /// </summary>
+        public IEnumerable<int> Palindromes()
+        {
+            var higherX = 0;
+
+            foreach (var n in _range)
+            {
+                foreach (var x in _range)
+                {
+                    var p = n * x;
+                    if (p.IsPalindrome() && higherX < x)
+                    {
+                        yield return p;
+                        higherX = x;
+                        break;
+                    }
+                }
+            }
         }
     }
 }
