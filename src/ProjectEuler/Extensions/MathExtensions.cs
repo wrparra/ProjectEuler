@@ -154,6 +154,33 @@ namespace ProjectEuler.Extensions
         
         #endregion
 
+        #region GCD & LCM
+        
+        /// <summary>
+        /// Find the Greatest Common Divisor
+        /// </summary>
+        public static long Gcd(long a, long b)
+        {
+            while (b != 0)
+            {
+                var remainder = a % b;
+                a = b;
+                b = remainder;
+            }
+
+            return a;
+        }
+
+        /// <summary>
+        /// Find the Least Common Multiple
+        /// </summary>
+        public static long Lcm(long a, long b)
+        {
+            return (a * b) / Gcd(a, b);
+        }
+        
+        #endregion
+        
         /// <summary>
         /// Em computação, memoização é uma técnica de otimização usada principalmente para acelerar programas de computador 
         /// evitando a repetição de cálculos já processados anteriormente. 

@@ -1,5 +1,6 @@
-﻿using System.Linq;
-using ProjectEuler.Collections;
+﻿using System.Collections.Generic;
+using System.Linq;
+using ProjectEuler.Extensions;
 
 namespace ProjectEuler.Problems
 {
@@ -13,11 +14,11 @@ namespace ProjectEuler.Problems
     /// </summary>
     public class EulerProblem001 : IEulerProblem
     {
-        private readonly Range _range;
+        private readonly IEnumerable<int> _range;
 
         public EulerProblem001(int start, int finish)
         {
-            _range = new Range(start, finish);
+            _range = start.To(finish);
         }
 
         public int Solve()

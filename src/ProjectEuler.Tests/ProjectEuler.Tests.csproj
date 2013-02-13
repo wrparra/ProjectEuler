@@ -56,6 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="EulerProblem005Test.cs" />
     <Compile Include="EulerProblem003Test.cs" />
     <Compile Include="EulerProblem002Test.cs" />
     <Compile Include="EulerProblem001Test.cs" />

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ProjectEuler.Collections;
 using ProjectEuler.Extensions;
 
 namespace ProjectEuler.Problems
@@ -19,7 +18,7 @@ namespace ProjectEuler.Problems
 
         public EulerProblem004(int start, int finish)
         {
-            _range = new Range(start, finish).Reverse();
+            _range = start.To(finish).Reverse();
         }
 
         public int Solve()
