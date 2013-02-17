@@ -42,6 +42,9 @@
     <Compile Include="Extensions\CollectionsExtensions.cs" />
     <Compile Include="IEulerProblem.cs" />
     <Compile Include="Extensions\MathExtensions.cs" />
+    <Compile Include="Problems\EulerProblem008.cs" />
+    <Compile Include="Problems\EulerProblem007.cs" />
+    <Compile Include="Problems\EulerProblem006.cs" />
     <Compile Include="Problems\EulerProblem005.cs" />
     <Compile Include="Problems\EulerProblem004.cs" />
     <Compile Include="Problems\EulerProblem002.cs" />

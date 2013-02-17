@@ -151,7 +151,12 @@ namespace ProjectEuler.Extensions
         {
             return Numbers(i => i.IsOdd(), start).TakeWhile(i => i < limit);
         }
-        
+
+        public static int Square(this int number)
+        {
+            return (int) Math.Pow(number, 2);
+        }
+
         #endregion
 
         #region GCD & LCM
