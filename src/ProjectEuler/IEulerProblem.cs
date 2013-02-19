@@ -3,6 +3,6 @@ namespace ProjectEuler
 {
     public interface IEulerProblem
     {
-        int Solve();
+        long Solve();
     }
 }

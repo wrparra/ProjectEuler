@@ -21,7 +21,7 @@ namespace ProjectEuler.Problems
             _range = start.To(finish).Reverse();
         }
 
-        public int Solve()
+        public long Solve()
         {
             //brute-force
             //return (from n in _range from x in _range let p = (n * x) where p.IsPalindrome() select p).Distinct().Max();

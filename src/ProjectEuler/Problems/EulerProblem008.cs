@@ -44,7 +44,7 @@ namespace ProjectEuler.Problems
             _seriesLength = seriesLength;
         }
 
-        public int Solve()
+        public long Solve()
         {
             return NumberSeries().Select(serie => serie.Aggregate((current, t) => current * t)).Max();
         }

@@ -38,6 +38,14 @@ namespace ProjectEuler.Extensions
         {
             return source.Select(i => (long)i);
         }
+        
+        /// <summary>
+        ///  Computes the product of a sequence of System.Int32 values.
+        /// </summary>
+        public static int Product(this IEnumerable<int> source)
+        {
+            return source.Aggregate(1, (accumulated, value) => accumulated * value);
+        }
 
         /// <summary>
         /// Returns elements from a sequence as long as a specified condition is true.

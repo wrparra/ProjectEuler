@@ -27,9 +27,9 @@ namespace ProjectEuler.Problems
         /// all Lowest Common Multiplers (LCM) of all the factors.
         /// </summary>
         /// <returns></returns>
-        public int Solve()
+        public long Solve()
         {
-            return (int)_range.CastToLong().Aggregate(MathExtensions.Lcm);
+            return _range.CastToLong().Aggregate(MathExtensions.Lcm);
         }
     }
 }

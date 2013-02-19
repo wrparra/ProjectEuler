@@ -22,9 +22,9 @@ namespace ProjectEuler.Problems
             _count = count;
         }
 
-        public int Solve()
+        public long Solve()
         {
-            return (int)MathExtensions.PrimeNumbers().Take(_count).Last();
+            return MathExtensions.PrimeNumbers().Take(_count).Last();
         }
     }
 }

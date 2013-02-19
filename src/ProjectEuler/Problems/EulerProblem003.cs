@@ -14,16 +14,16 @@ namespace ProjectEuler.Problems
     /// <see cref="http://pt.wikipedia.org/wiki/N%C3%BAmero_primo"/>
     public class EulerProblem003 : IEulerProblem
     {
-        private readonly ulong _number;
+        private readonly long _number;
 
-        public EulerProblem003(ulong number)
+        public EulerProblem003(long number)
         {
             _number = number;
         }
 
-        public int Solve()
+        public long Solve()
         {
-            return (int)MathExtensions.PrimeNumbers().Factorize(_number).Max();
+            return MathExtensions.PrimeNumbers().Factorize(_number).Max();
         }
     }
 }

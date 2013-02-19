@@ -20,7 +20,7 @@ namespace ProjectEuler.Problems
             _limit = limit;
         }
 
-        public int Solve()
+        public long Solve()
         {
             return MathExtensions.FibonacciNumbers().Where(x => x.IsEven()).TakeWhile(x => x < _limit).Sum();
         }

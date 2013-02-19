@@ -9,7 +9,7 @@ namespace ProjectEuler.Extensions
     {
         #region Prime Numbers
 
-        public static IEnumerable<ulong> PrimeNumbers()
+        public static IEnumerable<long> PrimeNumbers()
         {
             return Numbers(i => i == 2 || i.IsPrime());
         }
@@ -17,7 +17,7 @@ namespace ProjectEuler.Extensions
         /// <summary>
         /// Verifica se o número informado é um número Primo
         /// </summary>
-        public static bool IsPrime(this ulong number)
+        public static bool IsPrime(this long number)
         {
             if (number == 0) return false;
             if (number == 1) return false;
@@ -25,13 +25,13 @@ namespace ProjectEuler.Extensions
             if (number == 3) return true;
             if (number.IsEven()) return false;
 
-            for (ulong i = 3; i <= Math.Sqrt(number); i += 2)
+            for (long i = 3; i <= Math.Sqrt(number); i += 2)
                 if (number.IsMultipleOf(i)) return false;
 
             return true;
         }
 
-        public static IEnumerable<ulong> Factorize(this IEnumerable<ulong> primes, ulong number)
+        public static IEnumerable<long> Factorize(this IEnumerable<long> primes, long number)
         {
             return primes.TakeWhile(i => i <= Math.Sqrt(number)).Where(i => number % i == 0);
         }
@@ -100,7 +100,7 @@ namespace ProjectEuler.Extensions
 
         #region Numbers
        
-        public static bool IsEven(this ulong number)
+        public static bool IsEven(this long number)
         {
             return number % 2 == 0;
         }
@@ -110,7 +110,7 @@ namespace ProjectEuler.Extensions
             return number % 2 == 0;
         }
 
-        public static bool IsOdd(this ulong number)
+        public static bool IsOdd(this long number)
         {
             return number % 2 != 0;
         }
@@ -120,7 +120,7 @@ namespace ProjectEuler.Extensions
             return number % 2 != 0;
         }
 
-        public static bool IsMultipleOf(this ulong number, ulong multiple)
+        public static bool IsMultipleOf(this long number, long multiple)
         {
             return number % multiple == 0;
         }
@@ -130,7 +130,7 @@ namespace ProjectEuler.Extensions
             return number % multiple == 0;
         }
 
-        public static IEnumerable<ulong> Numbers(Predicate<ulong> predicate, ulong start = 0)
+        public static IEnumerable<long> Numbers(Predicate<long> predicate, long start = 0)
         {
             var index = start;
             while (true)
@@ -142,12 +142,12 @@ namespace ProjectEuler.Extensions
             }
         }
 
-        public static IEnumerable<ulong> EvenNumbers(ulong start = 0, ulong limit = ulong.MaxValue)
+        public static IEnumerable<long> EvenNumbers(long start = 0, long limit = long.MaxValue)
         {
             return Numbers(i => i.IsEven(), start).TakeWhile(i => i < limit);
         }
 
-        public static IEnumerable<ulong> OddNumbers(ulong start = 0, ulong limit = ulong.MaxValue)
+        public static IEnumerable<long> OddNumbers(long start = 0, long limit = long.MaxValue)
         {
             return Numbers(i => i.IsOdd(), start).TakeWhile(i => i < limit);
         }
@@ -185,7 +185,38 @@ namespace ProjectEuler.Extensions
         }
         
         #endregion
-        
+
+        #region Pythagorean Triplet
+
+        public static int[] PythagoreanTriplet(int sumLimit)
+        {
+            int a = 0, b = 0, c = 0;
+            int s = sumLimit;
+            bool found = false;
+            for (a = 1; a < s / 3; a++)
+            {
+                for (b = a; b < s / 2; b++)
+                {
+                    c = s - a - b;
+
+                    if ((a * a + b * b == c * c) && (a < b && b < c))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found)
+                {
+                    break;
+                }
+            }
+
+            return new[] { a, b, c };
+        }
+
+        #endregion
+
         /// <summary>
         /// Em computação, memoização é uma técnica de otimização usada principalmente para acelerar programas de computador 
         /// evitando a repetição de cálculos já processados anteriormente. 

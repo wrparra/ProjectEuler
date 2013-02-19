@@ -21,7 +21,7 @@ namespace ProjectEuler.Problems
             _range = start.To(finish);
         }
 
-        public int Solve()
+        public long Solve()
         {
             return _range.Where(n => n % 3 == 0 || n % 5 == 0).Sum();
         }

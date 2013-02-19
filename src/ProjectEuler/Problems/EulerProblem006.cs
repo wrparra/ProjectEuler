@@ -24,7 +24,7 @@ namespace ProjectEuler.Problems
             _range = start.To(finish);
         }
 
-        public int Solve()
+        public long Solve()
         {
             return _range.Sum().Square() - _range.Sum(i => i.Square());
         }
