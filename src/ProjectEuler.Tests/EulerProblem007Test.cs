@@ -7,7 +7,7 @@ namespace ProjectEuler.Tests
     public class EulerProblem007Test
     {
         [Fact]
-        public void the_6th_prime_number_must_be_13()
+        public void The6ThPrimeNumberMustBe13()
         {
             const int expected = 13;
             var result = new EulerProblem007(6).Solve();
@@ -15,7 +15,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void the_the_10001st_prime_number_must_be_104743()
+        public void The10001StPrimeNumberMustBe104743()
         {
             const int expected = 104743;
             var result = new EulerProblem007(10001).Solve();

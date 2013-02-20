@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using ProjectEuler.Extensions;
+﻿using System.Linq;
+using ProjectEuler.Collections;
 
 namespace ProjectEuler.Problems
 {
@@ -24,7 +21,7 @@ namespace ProjectEuler.Problems
 
         public long Solve()
         {
-            return MathExtensions.PrimeNumbers().TakeWhile(n => n < _limit).Sum();
+            return new PrimeNumbers(_limit).SieveOfEratosthenes().Sum();
         }
         
     }

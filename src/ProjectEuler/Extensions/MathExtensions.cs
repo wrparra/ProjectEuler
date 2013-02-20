@@ -13,7 +13,7 @@ namespace ProjectEuler.Extensions
         {
             return Numbers(i => i == 2 || i.IsPrime());
         }
-
+        
         /// <summary>
         /// Verifica se o número informado é um número Primo
         /// </summary>

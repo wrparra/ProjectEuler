@@ -9,7 +9,7 @@ namespace ProjectEuler.Tests
     public class EulerProblem003Test
     {
         [Fact]
-        public void The_largest_prime_factor_of_the_number_13195_must_be_29()
+        public void TheLargestPrimeFactorOfTheNumber13195MustBe29()
         {
             const int expected = 29;
             var result = new EulerProblem003(13195).Solve();
@@ -17,7 +17,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void The_largest_prime_factor_of_the_number_600851475143_must_be_6857()
+        public void TheLargestPrimeFactorOfTheNumber600851475143MustBe6857()
         {
             const int expected = 6857;
             var result = new EulerProblem003(600851475143).Solve();
@@ -27,7 +27,7 @@ namespace ProjectEuler.Tests
         #region Verifying Prime numbers
 
         [Fact]
-        public void The_prime_numbers_below_100()
+        public void ThePrimeNumbersBelow100()
         {
             const string expected = "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97";
             var numbers = MathExtensions.PrimeNumbers().TakeWhile(i => i <= 100);
@@ -36,7 +36,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void The_number_of_primes_below_104730_must_be_ten_thousand()
+        public void TheNumberOfPrimesBelow104730MustBeTenThousand()
         {
             const int expected = 10000;
             var result = MathExtensions.PrimeNumbers().TakeWhile(i => i < 104730).Count();
@@ -44,61 +44,61 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void Number_0_must_not_be_Prime()
+        public void Number0MustNotBePrime()
         {
             0l.IsPrime().Should().BeFalse();
         }
 
         [Fact]
-        public void Number_1_must_not_be_Prime()
+        public void Number1MustNotBePrime()
         {
             1l.IsPrime().Should().BeFalse();
         }
 
         [Fact]
-        public void Number_2_must_be_Prime()
+        public void Number2MustBePrime()
         {
             2l.IsPrime().Should().BeTrue();
         }
 
         [Fact]
-        public void Number_3_must_be_Prime()
+        public void Number3MustBePrime()
         {
             3l.IsPrime().Should().BeTrue();
         }
 
         [Fact]
-        public void Number_4_must_not_be_Prime()
+        public void Number4MustNotBePrime()
         {
             4l.IsPrime().Should().BeFalse();
         }
 
         [Fact]
-        public void Number_5_must_be_Prime()
+        public void Number5MustBePrime()
         {
             5l.IsPrime().Should().BeTrue();
         }
 
         [Fact]
-        public void Number_6_must_not_be_Prime()
+        public void Number6MustNotBePrime()
         {
             6l.IsPrime().Should().BeFalse();
         }
 
         [Fact]
-        public void Number_7_must_be_Prime()
+        public void Number7MustBePrime()
         {
             7l.IsPrime().Should().BeTrue();
         }
 
         [Fact]
-        public void Number_8_must_not_be_Prime()
+        public void Number8MustNotBePrime()
         {
             8l.IsPrime().Should().BeFalse();
         }
 
         [Fact]
-        public void Number_9_must_not_be_Prime()
+        public void Number9MustNotBePrime()
         {
             9l.IsPrime().Should().BeFalse();
         }

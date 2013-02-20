@@ -12,25 +12,25 @@ namespace ProjectEuler.Tests
         #region Verifying Palindromes
 
         [Fact]
-        public void The_number_9009_must_be_Palindrome()
+        public void TheNumber9009MustBePalindrome()
         {
             9009.IsPalindrome().Should().BeTrue();
         }
 
         [Fact]
-        public void The_number_1234_must_not_be_Palindrome()
+        public void TheNumber1234MustNotBePalindrome()
         {
             1234.IsPalindrome().Should().BeFalse();
         }
 
         [Fact]
-        public void The_number_1223_must_not_be_Palindrome()
+        public void TheNumber1223MustNotBePalindrome()
         {
             1223.IsPalindrome().Should().BeFalse();
         }
 
         [Fact]
-        public void The_number_1221_must_be_Palindrome()
+        public void TheNumber1221MustBePalindrome()
         {
             1221.IsPalindrome().Should().BeTrue();
         }
@@ -38,7 +38,7 @@ namespace ProjectEuler.Tests
         #endregion
 
         [Fact]
-        public void The_largest_palindrome_made_from_the_product_of_one_digit_numbers_must_be_9()
+        public void TheLargestPalindromeMadeFromTheProductOfOneDigitNumbersMustBe9()
         {
             const int expected = 9;
             var result = new EulerProblem004(1, 10).Solve();
@@ -46,7 +46,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void The_largest_palindrome_made_from_the_product_of_two_digit_numbers_must_be_9009()
+        public void TheLargestPalindromeMadeFromTheProductOfTwoDigitNumbersMustBe9009()
         {
             const int expected = 9009;
             var result = new EulerProblem004(10, 100).Solve();
@@ -54,7 +54,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void The_largest_palindrome_made_from_the_product_of_three_digit_numbers_must_be_906609()
+        public void TheLargestPalindromeMadeFromTheProductOfThreeDigitNumbersMustBe906609()
         {
             const int expected = 906609;
             var result = new EulerProblem004(100, 1000).Solve();
@@ -62,7 +62,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void The_largest_palindrome_made_from_the_product_of_four_digit_numbers_must_be_99000099()
+        public void TheLargestPalindromeMadeFromTheProductOfFourDigitNumbersMustBe99000099()
         {
             const int expected = 99000099;
             var result = new EulerProblem004(1000, 10000).Solve();
@@ -70,7 +70,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void The_largest_palindrome_made_from_the_product_of_five_digit_numbers_must_be_906609()
+        public void TheLargestPalindromeMadeFromTheProductOfFiveDigitNumbersMustBe906609()
         {
             const int expected = 6948496;
             var result = new EulerProblem004(568, 2653).Solve();
@@ -78,7 +78,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void Palindromes_made_from_the_product_of_three_digit_numbers_must_contains_2470()
+        public void PalindromesMadeFromTheProductOfThreeDigitNumbersMustContains2470()
         {
             var range = new Range(100, 1000).Reverse();
             var result = (from n in range from x in range let p = (n * x) where p.IsPalindrome() select p);
@@ -86,7 +86,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void Palindromes_made_from_the_product_of_three_digit_numbers_must_contains_655()
+        public void PalindromesMadeFromTheProductOfThreeDigitNumbersMustContains655()
         {
             var range = new Range(100, 1000).Reverse();
             var result = (from n in range from x in range let p = (n * x) where p.IsPalindrome() select p).Distinct();

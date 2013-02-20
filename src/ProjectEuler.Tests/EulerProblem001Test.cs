@@ -7,7 +7,7 @@ namespace ProjectEuler.Tests
     public class EulerProblem001Test
     {
         [Fact]
-        public void When_we_list_all_the_natural_numbers_below_10_that_are_multiples_of_3_or_5_the_sum_must_be_23()
+        public void WhenWeListAllTheNaturalNumbersBelow10ThatAreMultiplesOf3Or5TheSumMustBe23()
         {
             const int expected = 23;
             var result = new EulerProblem001(1, 9).Solve();
@@ -15,7 +15,7 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void When_we_list_all_the_natural_numbers_below_1000_that_are_multiples_of_3_or_5_the_sum_must_be_233168()
+        public void WhenWeListAllTheNaturalNumbersBelow1000ThatAreMultiplesOf3Or5TheSumMustBe233168()
         {
             const int expected = 233168;
             var result = new EulerProblem001(1, 999).Solve();
