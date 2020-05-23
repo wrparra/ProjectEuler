@@ -15,10 +15,10 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void WhenWeListAllTheNaturalNumbersBelow1000ThatAreMultiplesOf3Or5TheSumMustBe233168()
+        public void EulerProblem001Test_Solve()
         {
             const int expected = 233168;
-            var result = new EulerProblem001(1, 999).Solve();
+            var result = new EulerProblem001().Solve();
             result.Should().Be(expected);
         }
     }

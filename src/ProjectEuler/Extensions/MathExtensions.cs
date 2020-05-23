@@ -13,7 +13,7 @@ namespace ProjectEuler.Extensions
         {
             return Numbers(i => i == 2 || i.IsPrime());
         }
-        
+
         /// <summary>
         /// Verifica se o número informado é um número Primo
         /// </summary>
@@ -47,7 +47,7 @@ namespace ProjectEuler.Extensions
         /// <see cref="http://pt.wikipedia.org/wiki/N%C3%BAmero_de_Fibonacci"/>
         /// <seealso cref="http://en.wikibooks.org/wiki/Fibonacci_number_program"/>
         /// <param name="number">Indíce da sequência a ser calculado</param>
-        public static int Fibonacci(int number)
+        public static int Fibonacci(this int number)
         {
             return (number < 2) ? number : Fibonacci(number - 1) + Fibonacci(number - 2);
         }
@@ -56,23 +56,102 @@ namespace ProjectEuler.Extensions
         /// Método para cálculo de números da sequência de Fibonacci utilizando "Memoization".
         /// A idéia por trás memoização é acelerar os programas, evitando cálculos repetitivos para as entradas de função processadas anteriormente. 
         /// </summary>
-        public static int FibonacciMemoized(int number)
+        public static int MemoizedFibonacci(this int number)
         {
             Func<int, int> fib = null;
             fib = new Func<int, int>(n => n < 2 ? n : fib(n - 1) + fib(n - 2)).Memoize();
             return fib(number);
         }
 
+
+        /// <summary>
+        /// Fibonacci Binets Formula
+        /// https://stackoverflow.com/questions/1525521/nth-fibonacci-number-in-sublinear-time
+        /// https://elemarjr.wordpress.com/2014/04/01/fibonacci-na-velocidade-da-luz-binets-formula/
+        /// </summary>
+        public static int BinetFibonacci(this int nth)
+        {
+            if (nth < 2)
+                return nth;
+
+            //const double inverseSqrt5 = 0.44721359549995793928183473374626;
+            //const double phi = 1.6180339887498948482045868343656;
+            double sqrt5 = Math.Sqrt(5);
+            double inverseSqrt5 = 1 / sqrt5;
+            double phi = (1 + sqrt5) / 2;
+
+            return (int)Math.Abs(Math.Pow(phi, nth) * inverseSqrt5 + 0.5);
+        }
+
+        public static int IterativeFibonacci(this int n)
+        {
+            if (n < 2)
+                return n;
+
+            var i = 1;
+            var a = 0;
+            var b = 0;
+            var c = 1;
+
+            while (i < n)
+            {
+                a = b;
+                b = c;
+                c = a + b;
+                i++;
+            }
+
+            return c;
+        }
+
+        /// <summary>
+        /// Divide And Conquer Fibonacci
+        /// </summary>
+        public static int DivideAndConquerFibonacci(this int n)
+        {
+            if (n < 2)
+                return n;
+
+            var i = n - 1;
+            var a = 1d;
+            var b = 0d;
+            var c = 0d;
+            var d = 1d;
+            var aux1 = 0d;
+            var aux2 = 0d;
+            while (i > 0)
+            {
+                if (i.IsOdd())
+                {
+                    aux1 = d * b + c * a;
+                    aux2 = d * (b + a) + c * b;
+                    a = aux1;
+                    b = aux2;
+                }
+
+                aux1 = Math.Pow(c, 2) + Math.Pow(d, 2);
+                aux2 = d * (2 * c + d);
+                c = aux1;
+                d = aux2;
+                i = i / 2;
+            }
+
+            return (int)Math.Abs(a + b);
+        }
+
         /// <summary>
         /// Generate infinite fibonacci lazy list
         /// </summary>
-        /// <returns></returns>
         public static IEnumerable<int> FibonacciNumbers(int start = 0)
         {
             var count = start;
             while (true)
             {
-                yield return FibonacciMemoized(count++);
+                //yield return Fibonacci(count++);
+                //yield return FibonacciMemoized(count++);
+                //yield return BinetFibonacci(count++);
+                //yield return DivideAndConquerFibonacci(count++);
+                yield return IterativeFibonacci(count++);
             }
         }
 
@@ -99,22 +178,34 @@ namespace ProjectEuler.Extensions
         #endregion
 
         #region Numbers
-       
+
+        /// <summary>
+        /// É Par
+        /// </summary>
         public static bool IsEven(this long number)
         {
             return number % 2 == 0;
         }
 
+        /// <summary>
+        /// É Par
+        /// </summary>
         public static bool IsEven(this int number)
         {
             return number % 2 == 0;
         }
 
+        /// <summary>
+        /// É Ímpar
+        /// </summary>
         public static bool IsOdd(this long number)
         {
             return number % 2 != 0;
         }
 
+        /// <summary>
+        /// É Ímpar
+        /// </summary>
         public static bool IsOdd(this int number)
         {
             return number % 2 != 0;
@@ -154,13 +245,13 @@ namespace ProjectEuler.Extensions
 
         public static int Square(this int number)
         {
-            return (int) Math.Pow(number, 2);
+            return (int)Math.Pow(number, 2);
         }
 
         #endregion
 
         #region GCD & LCM
-        
+
         /// <summary>
         /// Find the Greatest Common Divisor
         /// </summary>
@@ -183,7 +274,7 @@ namespace ProjectEuler.Extensions
         {
             return (a * b) / Gcd(a, b);
         }
-        
+
         #endregion
 
         #region Pythagorean Triplet

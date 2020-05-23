@@ -46,61 +46,61 @@ namespace ProjectEuler.Tests
         [Fact]
         public void Number0MustNotBePrime()
         {
-            0l.IsPrime().Should().BeFalse();
+            0L.IsPrime().Should().BeFalse();
         }
 
         [Fact]
         public void Number1MustNotBePrime()
         {
-            1l.IsPrime().Should().BeFalse();
+            1L.IsPrime().Should().BeFalse();
         }
 
         [Fact]
         public void Number2MustBePrime()
         {
-            2l.IsPrime().Should().BeTrue();
+            2L.IsPrime().Should().BeTrue();
         }
 
         [Fact]
         public void Number3MustBePrime()
         {
-            3l.IsPrime().Should().BeTrue();
+            3L.IsPrime().Should().BeTrue();
         }
 
         [Fact]
         public void Number4MustNotBePrime()
         {
-            4l.IsPrime().Should().BeFalse();
+            4L.IsPrime().Should().BeFalse();
         }
 
         [Fact]
         public void Number5MustBePrime()
         {
-            5l.IsPrime().Should().BeTrue();
+            5L.IsPrime().Should().BeTrue();
         }
 
         [Fact]
         public void Number6MustNotBePrime()
         {
-            6l.IsPrime().Should().BeFalse();
+            6L.IsPrime().Should().BeFalse();
         }
 
         [Fact]
         public void Number7MustBePrime()
         {
-            7l.IsPrime().Should().BeTrue();
+            7L.IsPrime().Should().BeTrue();
         }
 
         [Fact]
         public void Number8MustNotBePrime()
         {
-            8l.IsPrime().Should().BeFalse();
+            8L.IsPrime().Should().BeFalse();
         }
 
         [Fact]
         public void Number9MustNotBePrime()
         {
-            9l.IsPrime().Should().BeFalse();
+            9L.IsPrime().Should().BeFalse();
         }
 
         #endregion
