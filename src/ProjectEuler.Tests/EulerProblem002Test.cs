@@ -1,8 +1,8 @@
-﻿using ProjectEuler.Extensions;
+﻿using FluentAssertions;
+using ProjectEuler.Extensions;
 using ProjectEuler.Problems;
-using FluentAssertions;
-using Xunit;
 using System.Linq;
+using Xunit;
 
 namespace ProjectEuler.Tests
 {

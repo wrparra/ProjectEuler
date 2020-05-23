@@ -1,5 +1,5 @@
-﻿using ProjectEuler.Problems;
-using FluentAssertions;
+﻿using FluentAssertions;
+using ProjectEuler.Problems;
 using Xunit;
 
 namespace ProjectEuler.Tests
